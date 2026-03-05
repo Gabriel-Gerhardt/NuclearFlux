@@ -1,4 +1,4 @@
-## <Project Name>
+## NuclearFlux
 
 Reactive observability library for real-time visualization of Spring WebFlux pipelines in Java applications.
 

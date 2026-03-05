@@ -1,11 +1,16 @@
 ## <Project Name>
 
-<Project fast description>
-  
+Reactive observability library for real-time visualization of Spring WebFlux pipelines in Java applications.
+
+The library captures Reactor operators at runtime and renders the execution of reactive pipelines as an interactive visualization in a monitoring server.
+
 ## How It Works
 
-<Specified project description>
-
+1. A method is annotated with `@ObserveRe`.
+2. When the method is invoked, the library intercepts the returned Reactor Publisher (`Flux` or `Mono`).
+3. Monitoring hooks are attached to the reactive pipeline.
+4. Execution events from each operator are streamed to the observability server.
+5. The server renders the pipeline as a real-time interactive visualization.
 
 ## Diagram
 
@@ -13,20 +18,37 @@
   
 ## Tech Stack
 
-<Stack of the project>
+Backend:
+- Java 21
+- Spring Boot 4.0.0
+- Reactor
+- WebSocket streaming
 
-
+Visualization:
+- JavaScript
+- WebSocket
+- Graph rendering
 
 ## Use Cases
 
-<Why the project is useful>
+### @ObserveFlux
 
-## Set-up
+Marks a method returning a Reactor Publisher (`Flux` or `Mono`).
+
+When invoked, the library attaches monitoring hooks to the reactive pipeline and streams execution events to the observability server.
+
+Parameters:
+
+- `name` – identifier used in the visualization server.
+- If omitted, the method name is used.
+
+If the annotated method does not return a reactive Publisher, the library logs a configuration warning.
+
 
 ```bash
 git clone <Link>
 cd <Project name>
-<other comands>
+<other commands>
 ```
 
 Access:

@@ -6,7 +6,7 @@ The library captures Reactor operators at runtime and renders the execution of r
 
 ## How It Works
 
-1. A method is annotated with `@ObserveRe`.
+1. A method is annotated with `@ObserveFlux`.
 2. When the method is invoked, the library intercepts the returned Reactor Publisher (`Flux` or `Mono`).
 3. Monitoring hooks are attached to the reactive pipeline.
 4. Execution events from each operator are streamed to the observability server.
